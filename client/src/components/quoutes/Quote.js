@@ -1,31 +1,14 @@
-// To do: Add a default message stating "Click Button to generate a quote and change the state accordingly"
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import QuoteDataContext from "../context/QuoteDataContext";
 
 const Quote = () => {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(null);
   const [randomQuote, setRandomQuote] = useState(null);
   const [showQuote, setShowQuote] = useState(false);
-  //   const [val, setVal] = useState("Click on Generate to obtain a quote"); -------> To do for default text
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://type.fit/api/quotes");
-        const data = await response.json();
-        // console.log(data);
-        setData(data);
-      } catch (error) {
-        setError("401 Unauthorized");
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { data = [] } = useContext(QuoteDataContext);
 
   useEffect(() => {
     if (data.length > 0) {
@@ -43,29 +26,40 @@ const Quote = () => {
       generateRandomQuote();
       setShowQuote(true);
     }
-    // setVal(""); ---> To do for default text
   };
 
   return (
-    <div className=" h-screen lg:w-screen bg-slate-800 flex flex-col justify-center items-center">
-      <div className="flex px-5 pt-4 pb-4 absolute top-0 left-0">
+    <div className=" h-screen lg:w-screen  bg-slate-400 flex flex-col justify-center items-center">
+      <div className="flex justify-between items-center px-5 py-3 absolute top-0 w-full bg-blue-600 ">
         <Link
           to="/"
-          className="text-5xl   text-white hover:text-black hover:bg-green-400 hover:rounded-full"
+          className="text-4xl text-white hover:text-black hover:bg-green-400 hover:rounded-full"
         >
           <IoMdArrowRoundBack />
+        </Link>
+        <Link
+          to="/quotes-list"
+          className="text-white text-2xl hover:underline decoration-green-400 hover:text-black"
+        >
+          All Quotes
         </Link>
       </div>
       <h1 className="text-3xl font-bold text-white pb-8 text-center">
         The following API generates random quotes
       </h1>
-      <div className="relative h-3/6 md:h-80 w-2/4 bg-white p-2 border-4 border-red-700 ">
-        {showQuote && randomQuote && (
-          <div className="flex flex-col items-center pt-20">
+      <div className="relative h-3/6 md:h-80 w-2/4 bg-white p-2 border-4 border-red-700 rounded-md">
+        {showQuote && randomQuote ? (
+          <div className="flex flex-col items-center pt-12">
             <p className="text-xl font-mono font-bold text-center overflow-hidden">
-              {randomQuote.text}
+              {randomQuote.quote}
             </p>
-            <p className="text-md font-bold"> - {randomQuote.author}</p>
+            <p className="text-md font-bold mt-4"> - {randomQuote.name}</p>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center pt-24">
+            <p className="text-xl text-green-600 font-mono font-bold text-center overflow-hidden">
+              Click "Generate a Quote", to generate a random quote
+            </p>
           </div>
         )}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
