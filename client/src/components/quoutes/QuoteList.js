@@ -37,11 +37,8 @@ const QuoteList = () => {
   };
   return (
     <div className="h-screen overflow-x-auto lg:w-screen bg-slate-400 flex flex-col items-center w-screen">
-      <div
-        onClick={scrollToTop}
-        className="flex bottom-5 right-10 absolute rounded-full bg-green-400 hover:scale-105 p-2 transition ease-in-out delay-120 hover:-translate-y-1 duration-300"
-      >
-        <button>
+      <div className="flex bottom-5 right-10 absolute rounded-full bg-green-400 hover:scale-105 p-2 transition ease-in-out delay-120 hover:-translate-y-1 duration-300">
+        <button onClick={scrollToTop}>
           <FaArrowUp className="text-3xl " />
         </button>
       </div>
