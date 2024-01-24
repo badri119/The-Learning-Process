@@ -12,8 +12,10 @@ app.use(express.json());
 // });
 
 const getAllQuotes = require("./quotes");
+const httpCodes = require("./http_codes");
 
 app.use("/quotes", getAllQuotes);
+app.use("/http", httpCodes);
 
 app.listen(port, () => {
   console.log(`App running on port ${port}`);

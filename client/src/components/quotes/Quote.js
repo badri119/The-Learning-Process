@@ -14,7 +14,7 @@ const Quote = () => {
     if (data.length > 0) {
       generateRandomQuote();
     }
-  }, [data]);
+  }, []);
 
   const generateRandomQuote = () => {
     const randomIndex = Math.floor(Math.random() * data.length);
@@ -44,12 +44,10 @@ const Quote = () => {
           All Quotes
         </Link>
       </div>
-      <h1 className="text-3xl font-bold text-white pb-8 text-center">
-        The following API generates random quotes
-      </h1>
-      <div className="relative h-3/6 md:h-80 w-2/4 bg-white p-2 border-4 border-red-700 rounded-md">
+
+      <div className="relative h-3/6 md:h-80 w-2/4 bg-white p-2 shadow-md shadow-black rounded-md">
         {showQuote && randomQuote ? (
-          <div className="flex flex-col items-center pt-12">
+          <div className="flex flex-col items-center pt-20">
             <p className="text-xl font-mono font-bold text-center overflow-hidden">
               {randomQuote.quote}
             </p>
@@ -57,7 +55,7 @@ const Quote = () => {
           </div>
         ) : (
           <div className="flex flex-col items-center pt-24">
-            <p className="text-xl text-green-600 font-mono font-bold text-center overflow-hidden">
+            <p className="text-xl text-blue-600 font-mono font-bold text-center overflow-hidden">
               Click "Generate a Quote", to generate a random quote
             </p>
           </div>

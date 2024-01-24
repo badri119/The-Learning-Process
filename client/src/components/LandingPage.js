@@ -1,16 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import bgimage from "../images/background.png";
+import http from "../images/http.png";
 import quote from "../images/quote.png";
 const LandingPage = () => {
-  const setbgimage = {
-    backgroundImage: `url(${bgimage})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    minHeight: "100vh",
-    position: "relative",
-  };
-
   const apis = [
     {
       id: 1,
@@ -21,26 +13,36 @@ const LandingPage = () => {
     },
     {
       id: 2,
-      header: "API2",
-      img: quote,
-      info: "TBD",
-      urlto: "/tbd",
+      header: "HTTP Game",
+      img: http,
+      info: "Test your HTTP knowledge!",
+      urlto: "/http-game",
     },
   ];
 
   return (
-    <div style={setbgimage}>
-      <div className="inset-0 inset-x-0">
-        <h1 className="flex underline text-white text-5xl font-bold justify-center items-center pt-10 mb-5 text-center">
-          Welcome to Random API Generator
+    <div>
+      <div className="h-screen bg-black flex justify-center items-center flex-col">
+        <h1 className="font-custom text-white text-5xl font-bold">
+          API Generator
         </h1>
-        <h2 className="flex text-white  text-2xl justify-center mb-16 font-bold text-center">
+        <h2 className="mt-10 text-white text-3xl font-bold font-custom text-center px-2 md:px-0">
+          A website where you can play with APIs
+        </h2>
+        <a href="#apis">
+          <button className="text-white mt-10 text-xl p-3 bg-black border border-white rounded-md hover:bg-white hover:text-black">
+            Get Started
+          </button>
+        </a>
+      </div>
+      <div className="inset-0 inset-x-0 pt-10 h-screen bg-gray-100" id="apis">
+        <h2 className="flex text-black  text-2xl justify-center mb-16 font-bold text-center">
           Choose the following list of API's and test it out!
         </h2>
 
-        <div className=" flex flex-col gap-12 md:flex-row md:gap-72 justify-center">
+        <div className=" flex flex-col gap-12 md:flex-row md:gap-72 justify-center px-4 md:px-0 pb-16">
           {apis.map(({ id, header, img, info, urlto }) => (
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow shadow-neutral-100 dark:bg-gray-800 dark:border-gray-700">
+            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow shadow-neutral-100 dark:bg-black dark:border-gray-700">
               <div key={id}>
                 <img className="rounded-t-lg" src={img} alt="api_image" />
 
@@ -49,7 +51,7 @@ const LandingPage = () => {
                     {header}
                   </h5>
 
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  <p className="mb-3 font-normal text-gray-700 dark:text-white text-center">
                     {info}
                   </p>
                   <div className="flex justify-center">

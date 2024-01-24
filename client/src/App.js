@@ -2,8 +2,9 @@ import "./App.css";
 import React from "react";
 import LandingPage from "./components/LandingPage";
 import QuoteProvider from "./components/context/QuoteProvider";
-import Quote from "./components/quoutes/Quote";
-import QuoteList from "./components/quoutes/QuoteList";
+import Quote from "./components/quotes/Quote";
+import QuoteList from "./components/quotes/QuoteList";
+import Http from "./components/HttpGame/Http";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -32,6 +33,7 @@ function App() {
             </React.Fragment>
           }
         />
+        <Route path="http-game" element={<Http />} />
       </Routes>
     </div>
   );
