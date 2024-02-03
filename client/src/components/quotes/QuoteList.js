@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useContext } from "react";
-import QuoteDataContext from "../context/QuoteDataContext";
+import QuoteDataContext from "../context/ForQuotes/QuoteDataContext";
 
 const QuoteList = () => {
   const [search, setSearch] = useState();

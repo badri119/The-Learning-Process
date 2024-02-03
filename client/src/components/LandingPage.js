@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import http from "../images/http.png";
 import quote from "../images/quote.png";
+import movie from "../images/movies.png";
 const LandingPage = () => {
   const apis = [
     {
       id: 1,
       header: "Quote Generator",
       img: quote,
-      info: "The following API generatres random quotes",
+      info: "Get inspired from these Quotes",
       urlto: "/quote-generator",
     },
     {
@@ -17,6 +18,13 @@ const LandingPage = () => {
       img: http,
       info: "Test your HTTP knowledge!",
       urlto: "/http-game",
+    },
+    {
+      id: 3,
+      header: "Entertainment Database",
+      img: movie,
+      info: "A list of Movies and Shows",
+      urlto: "/movie-db",
     },
   ];
 
@@ -40,11 +48,15 @@ const LandingPage = () => {
           Choose the following list of API's and test it out!
         </h2>
 
-        <div className=" flex flex-col gap-12 md:flex-row md:gap-72 justify-center px-4 md:px-0 pb-16">
+        <div className=" flex flex-col gap-12 md:flex-row md:gap-12 justify-center px-4 md:px-0 pb-16">
           {apis.map(({ id, header, img, info, urlto }) => (
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow shadow-neutral-100 dark:bg-black dark:border-gray-700">
+            <div className="max-w-96 bg-white border border-gray-200 rounded-lg shadow shadow-neutral-100 dark:bg-black dark:border-gray-700">
               <div key={id}>
-                <img className="rounded-t-lg" src={img} alt="api_image" />
+                <img
+                  className="rounded-t-lg h-48 w-80 object-cover"
+                  src={img}
+                  alt="api_image"
+                />
 
                 <div className="p-5">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">

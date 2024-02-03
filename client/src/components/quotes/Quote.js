@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useState, useEffect, useContext } from "react";
-import QuoteDataContext from "../context/QuoteDataContext";
+import QuoteDataContext from "../context//ForQuotes/QuoteDataContext";
 
 const Quote = () => {
   const [randomQuote, setRandomQuote] = useState(null);

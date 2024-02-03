@@ -1,0 +1,31 @@
+.header {
+  background-color: black;
+  height: 72px;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  left: 0;
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.user-image,
+.user-image img {
+  width: 38px;
+  height: 38px;
+}
+
+.link-style {
+  text-decoration: none;
+  color: white;
+  padding: 2px;
+}
+.link-style:hover {
+  color: black;
+  background-color: white;
+  border-radius: 100%;
+}
