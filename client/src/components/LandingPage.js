@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import http from "../images/http.png";
 import quote from "../images/quote.png";
 import movie from "../images/movies.png";
+import "./LandingPage.css";
+
 const LandingPage = () => {
   const apis = [
     {
@@ -11,6 +13,7 @@ const LandingPage = () => {
       img: quote,
       info: "Get inspired from these Quotes",
       urlto: "/quote-generator",
+      tech: "Made with PostgreSQL, TailwindCSS and useContext",
     },
     {
       id: 2,
@@ -18,6 +21,7 @@ const LandingPage = () => {
       img: http,
       info: "Test your HTTP knowledge!",
       urlto: "/http-game",
+      tech: "Made with PostgreSQL and TailwindCSS",
     },
     {
       id: 3,
@@ -25,6 +29,7 @@ const LandingPage = () => {
       img: movie,
       info: "A list of Movies and Shows",
       urlto: "/movie-db",
+      tech: "Made with Redux, OMDb API and vanilla CSS",
     },
   ];
 
@@ -49,7 +54,7 @@ const LandingPage = () => {
         </h2>
 
         <div className=" flex flex-col gap-12 md:flex-row md:gap-12 justify-center px-4 md:px-0 pb-16">
-          {apis.map(({ id, header, img, info, urlto }) => (
+          {apis.map(({ id, header, img, info, urlto, tech }) => (
             <div className="max-w-96 bg-white border border-gray-200 rounded-lg shadow shadow-neutral-100 dark:bg-black dark:border-gray-700">
               <div key={id}>
                 <img
@@ -57,6 +62,14 @@ const LandingPage = () => {
                   src={img}
                   alt="api_image"
                 />
+                <div className="has-tooltip absolute flex pl-1">
+                  <span className="tooltip text-sm font-semibold w-60 rounded shadow-lg p-1 bg-gray-100 text-indigo-600 -mt-12">
+                    {tech}
+                  </span>
+                  <p className="text-white font-bold text-lg hover:scale-105 hover:opacity-50">
+                    &#9432;
+                  </p>
+                </div>
 
                 <div className="p-5">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">

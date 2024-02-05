@@ -1,12 +1,14 @@
 import React from "react";
-import "./Footer.css";
+import "./Footer.scss";
 
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <div className="footer">
       <div>Movie Database</div>
-      <div>&copy; {year} Movie Database and an understanding of Redux </div>
+      <div>
+        &copy; {year} Entertainment Database and an understanding of Redux{" "}
+      </div>
     </div>
   );
 };

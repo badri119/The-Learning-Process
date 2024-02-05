@@ -1,5 +1,5 @@
 import React from "react";
-import "./PageError.css";
+import "./PageError.scss";
 
 const PageError = () => {
   return <div>PageError</div>;

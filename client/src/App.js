@@ -6,6 +6,8 @@ import Quote from "./components/quotes/Quote";
 import QuoteList from "./components/quotes/QuoteList";
 import Http from "./components/HttpGame/Http";
 import MovieDB from "./components/MovieDB/Main";
+import { Provider } from "react-redux";
+import { store } from "./components/MovieDB/features/store";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -34,8 +36,17 @@ function App() {
             </React.Fragment>
           }
         />
-        <Route path="http-game" element={<Http />} />
-        <Route path="movie-db" element={<MovieDB />} />
+        <Route path="/http-game" element={<Http />} />
+        <Route
+          path="/movie-db/*"
+          element={
+            <React.Fragment>
+              <Provider store={store}>
+                <MovieDB />
+              </Provider>
+            </React.Fragment>
+          }
+        />
       </Routes>
     </div>
   );
