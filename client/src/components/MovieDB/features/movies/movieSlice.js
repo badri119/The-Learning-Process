@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { movieApi, showApi } from "../../api";
 
 //Creating an async thunk for getting the data from the API for movies
 export const fetchMovies = createAsyncThunk(
