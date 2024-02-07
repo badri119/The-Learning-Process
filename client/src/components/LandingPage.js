@@ -29,7 +29,7 @@ const LandingPage = () => {
       img: movie,
       info: "A list of Movies and Shows",
       urlto: "/movie-db",
-      tech: "Made with Redux, OMDb API and vanilla CSS",
+      tech: "Made with Redux, OMDb API and SCSS",
     },
   ];
 
@@ -48,12 +48,11 @@ const LandingPage = () => {
           </button>
         </a>
       </div>
-      <div className="inset-0 inset-x-0 pt-10 h-screen bg-gray-100" id="apis">
+      <div className="inset-0 inset-x-0 pt-10 h-screen bg-gray-100 " id="apis">
         <h2 className="flex text-black  text-2xl justify-center mb-16 font-bold text-center">
           Choose the following list of API's and test it out!
         </h2>
-
-        <div className=" flex flex-col gap-12 md:flex-row md:gap-12 justify-center px-4 md:px-0 pb-16">
+        <div className=" flex flex-col gap-12 md:flex-row md:gap-12 justify-center px-4 md:px-0 items-center pt-12">
           {apis.map(({ id, header, img, info, urlto, tech }) => (
             <div className="max-w-96 bg-white border border-gray-200 rounded-lg shadow shadow-neutral-100 dark:bg-black dark:border-gray-700">
               <div key={id}>

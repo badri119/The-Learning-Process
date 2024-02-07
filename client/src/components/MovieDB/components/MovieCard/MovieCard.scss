@@ -1,7 +1,12 @@
 .card-item {
-  background: rgb(227, 227, 219);
+  background: black;
   cursor: pointer;
-  box-shadow: 5px 5px lightblue;
+  border-radius: 3%;
+  transition: transform 0.3s;
+}
+
+.card-item:hover {
+  transform: scale(1.05);
 }
 
 .card-top {
@@ -9,7 +14,15 @@
   img {
     width: 100%;
     height: 100%;
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
   }
+}
+
+.card-bottom {
+  padding: 15px;
+  border-top: 5px;
+  border-top-color: white;
 }
 
 .card-info {
@@ -19,4 +32,8 @@
     font-weight: 400;
     margin-bottom: 10px;
   }
+}
+
+.title-color {
+  color: white;
 }

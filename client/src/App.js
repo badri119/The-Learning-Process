@@ -8,7 +8,6 @@ import Http from "./components/HttpGame/Http";
 import MovieDB from "./components/MovieDB/Main";
 import { Provider } from "react-redux";
 import { store } from "./components/MovieDB/features/store";
-
 import { Routes, Route } from "react-router-dom";
 
 function App() {

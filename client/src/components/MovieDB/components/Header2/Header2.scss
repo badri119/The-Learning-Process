@@ -1,14 +1,11 @@
-.header {
+.header2 {
   background-color: black;
   height: 72px;
   padding: 0px 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 99;
+  justify-content: start;
+  gap: 20px;
 }
 
 .logo {
@@ -23,13 +20,17 @@
   height: 38px;
 }
 
-.link-style {
+.link-style2 {
   text-decoration: none;
   color: white;
   padding: 2px;
 }
-.link-style:hover {
+.link-style2:hover {
   color: black;
   background-color: white;
-  border-radius: 100%;
+  border-radius: 10%;
+}
+
+.button-2 {
+  font-size: x-large;
 }

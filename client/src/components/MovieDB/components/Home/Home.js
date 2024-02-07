@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from "react";
 import "./Home.scss";
 import MovieList from "../MovieList/MovieList";
-import axios from "axios";
-import { api } from "../../api";
 import { useDispatch } from "react-redux";
-import { addMovies } from "../../features/movies/movieSlice";
+import { fetchMovies, fetchShows } from "../../features/movies/movieSlice";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
-  const [data, setData] = useState();
   const dispatch = useDispatch();
+  const movieText = "John";
+  const showText = "Breaking";
 
   useEffect(() => {
-    const movieData = async () => {
-      try {
-        const response = await axios.get(api);
-        dispatch(addMovies(response.data));
-      } catch {
-        console.error("Oops something went wrong!");
-      }
-    };
-    movieData();
-  }, []);
+    dispatch(fetchMovies(movieText));
+    dispatch(fetchShows(showText));
+  }, [dispatch]);
   return (
     <div>
-      <div className="img"></div>
-      <MovieList />
+      <Header />
+      <div className="container">
+        <div className="img"></div>
+        <MovieList />
+      </div>
+      <Footer />
     </div>
   );
 };
