@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { api_key } from "../../components/api";
 
 //Creating an async thunk for getting the data from the API for movies
 export const fetchMovies = createAsyncThunk(
@@ -7,7 +8,7 @@ export const fetchMovies = createAsyncThunk(
   async (search) => {
     try {
       const response = await axios.get(
-        `http://www.omdbapi.com/?apikey=bedb10bf&s=${search}&type=movie`
+        `http://www.omdbapi.com/?apikey=${api_key}&s=${search}&type=movie`
       );
       return response.data;
     } catch {
@@ -21,7 +22,7 @@ export const fetchShows = createAsyncThunk(
   async (search) => {
     try {
       const response = await axios.get(
-        `http://www.omdbapi.com/?apikey=bedb10bf&s=${search}&type=series`
+        `http://www.omdbapi.com/?apikey=${api_key}&s=${search}&type=series`
       );
       return response.data;
     } catch {
