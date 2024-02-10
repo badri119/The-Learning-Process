@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Home.scss";
 import MovieList from "../MovieList/MovieList";
 import { useDispatch } from "react-redux";

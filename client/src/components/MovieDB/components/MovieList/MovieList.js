@@ -13,18 +13,19 @@ const MovieList = () => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    dispatch(fetchMovies(search));
-    dispatch(fetchShows(search));
-    setSearch("");
-  };
   const movies = useSelector(getAllMovies);
   const shows = useSelector(getAllShows);
   // console.log("All the movies are", movies);
   // console.log("All the shows are", shows);
   const movieData = movies && movies.Search ? movies.Search.slice(0, 8) : [];
   const showData = shows && shows.Search ? shows.Search.slice(0, 8) : [];
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(fetchMovies(search));
+    dispatch(fetchShows(search));
+    setSearch("");
+  };
 
   return (
     <div>
@@ -37,7 +38,7 @@ const MovieList = () => {
             placeholder="Search for a movie or show.."
             type="text"
           ></input>
-          <button type="submit" className="search-button">
+          <button type="submit" className="search-button" disabled={!search}>
             Search
           </button>
         </form>
@@ -59,7 +60,7 @@ const MovieList = () => {
         </div>
         <div className="space-between">
           <div className="movie-list">
-            <h2 className="title-name">Shows</h2>
+            <h2 className="title-name">Series</h2>
             <div className="movie-container">
               {shows.Response === "True" ? (
                 showData.map((show, index) => (
@@ -67,7 +68,7 @@ const MovieList = () => {
                 ))
               ) : (
                 <div className="movies-error">
-                  <h3>{shows.Error}</h3>
+                  <h1>{shows.Error}</h1>
                 </div>
               )}
             </div>

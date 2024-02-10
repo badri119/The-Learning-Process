@@ -5,7 +5,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <div className="footer">
-      <div>
+      <div className="footer-text">
         &copy; {year} Entertainment Database and an understanding of Redux{" "}
       </div>
     </div>

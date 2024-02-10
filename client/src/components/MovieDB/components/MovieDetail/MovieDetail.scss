@@ -50,6 +50,16 @@
   }
 }
 
+@media (max-width: 400px) {
+  .section-right {
+    margin-left: 0;
+  }
+
+  .image-poster {
+    display: none;
+  }
+}
+
 .plot {
   text-align: justify;
   text-justify: inter-word;

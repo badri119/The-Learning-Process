@@ -39,9 +39,6 @@ const MovieDetail = () => {
                   IMDB Rating <i></i> : {data.imdbRating}
                 </span>
                 <span>
-                  IMDB Votes <i></i> : {data.imdbVotes}
-                </span>
-                <span>
                   Runtime <i></i> : {data.Runtime}
                 </span>
                 <span>

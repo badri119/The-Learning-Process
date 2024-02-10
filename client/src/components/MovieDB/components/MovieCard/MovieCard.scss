@@ -5,6 +5,12 @@
   transition: transform 0.3s;
 }
 
+@media (max-width: 480px) {
+  .card-item {
+    margin-right: 70px;
+  }
+}
+
 .card-item:hover {
   transform: scale(1.05);
 }
