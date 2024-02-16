@@ -7,7 +7,7 @@ export const fetchMovies = createAsyncThunk(
   async (search) => {
     try {
       const response = await axios.get(
-        `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${search}&type=movie`
+        `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${search}&type=movie`
       );
       return response.data;
     } catch {
