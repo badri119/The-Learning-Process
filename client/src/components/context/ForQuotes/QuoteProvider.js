@@ -9,7 +9,7 @@ const QuoteProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:4000/quotes");
+        const response = await fetch(process.env.REACT_APP_QUOTE_API);
         const datas = await response.json();
         // console.log(datas);
         setData(datas);

@@ -13,7 +13,7 @@ const MovieDetail = () => {
   const { imdbID } = useParams();
   const dispatch = useDispatch();
   const data = useSelector(getSelectedMovieorShow);
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     dispatch(showDetails(imdbID));

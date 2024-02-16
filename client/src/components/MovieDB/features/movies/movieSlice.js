@@ -60,21 +60,21 @@ const movieSlice = createSlice({
     // Extra reducers using async thunk for movies
     builder
       .addCase(fetchMovies.pending, (state) => {
-        console.log("Pending");
+        // console.log("Pending");
       })
       .addCase(fetchMovies.fulfilled, (state, { payload }) => {
-        console.log("Fetch was successful");
+        // console.log("Fetch was successful");
         state.movies = payload;
       })
       .addCase(fetchMovies.rejected, (state) => {
-        console.log("Rejected");
+        // console.log("Rejected");
       })
       .addCase(fetchShows.fulfilled, (state, { payload }) => {
-        console.log("Fetch was successful");
+        // console.log("Fetch was successful");
         state.shows = payload;
       })
       .addCase(showDetails.fulfilled, (state, { payload }) => {
-        console.log("Fetch was successful");
+        // console.log("Fetch was successful");
         state.selectedMovieorShow = payload;
       });
   },

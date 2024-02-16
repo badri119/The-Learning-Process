@@ -45,13 +45,16 @@ const Quote = () => {
         </Link>
       </div>
 
-      <div className="relative h-3/6 md:h-80 w-2/4 bg-white p-2 shadow-md shadow-black rounded-md">
+      <div className="relative h-2/5 w-3/4 md:h-80 md:w-2/4 bg-white p-2 shadow-md shadow-black rounded-md">
         {showQuote && randomQuote ? (
-          <div className="flex flex-col items-center pt-20">
-            <p className="text-xl font-mono font-bold text-center overflow-hidden">
+          <div className="flex flex-col items-center pt-5 md:pt-20">
+            <p className="text-sm md:text-xl font-mono font-bold text-center overflow-hidden">
               {randomQuote.quote}
             </p>
-            <p className="text-md font-bold mt-4"> - {randomQuote.name}</p>
+            <p className="text-sm md:text-xl font-bold mt-4">
+              {" "}
+              - {randomQuote.name}
+            </p>
           </div>
         ) : (
           <div className="flex flex-col items-center pt-24">
