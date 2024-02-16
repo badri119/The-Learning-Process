@@ -83,6 +83,9 @@ const Http = () => {
           <h1 className="text-2xl text-center :md:text-5xl font-semibold text-white">
             You're the HTTP Code Master! 🥳
           </h1>
+          <h1 className="text-2xl text-center :md:text-5xl font-semibold text-white">
+            Your Score: {score}/{questions.length}
+          </h1>
           <div className="pt-5 flex flex-row gap-5 px-5">
             <button
               className=" bg-gray-700 text-white p-2 rounded-md hover:bg-white hover:text-black md:w-48 w-24"

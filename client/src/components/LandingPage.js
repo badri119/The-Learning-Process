@@ -42,8 +42,8 @@ const LandingPage = () => {
         <h2 className="mt-10 text-white text-3xl font-bold font-custom text-center px-2 md:px-0">
           A website where you can play with APIs
         </h2>
-        <a href="#apis">
-          <button className="text-white mt-10 text-xl p-3 bg-black border border-white rounded-md hover:bg-white hover:text-black">
+        <a href="#apis" className="mt-10">
+          <button className="text-white text-xl p-3 bg-black border border-white rounded-md hover:bg-white hover:text-black">
             Get Started
           </button>
         </a>
