@@ -21,7 +21,7 @@ export const fetchShows = createAsyncThunk(
   async (search) => {
     try {
       const response = await axios.get(
-        `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${search}&type=series`
+        `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${search}&type=series`
       );
       return response.data;
     } catch {
@@ -34,7 +34,7 @@ export const fetchShows = createAsyncThunk(
 export const showDetails = createAsyncThunk("movies/details", async (id) => {
   try {
     const response = await axios.get(
-      `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${id}&Plot=full`
+      `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${id}&Plot=full`
     );
     return response.data;
   } catch {
