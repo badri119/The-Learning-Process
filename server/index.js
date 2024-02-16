@@ -17,7 +17,7 @@ const example = require("./routes/example");
 
 app.use("/quotes", getAllQuotes);
 app.use("/http", httpCodes);
-// app.use("/example", example);
+app.use("/example", example);
 
 app.listen(process.env.PORT, () => {
   console.log(`App running on port ${process.env.PORT}`);
