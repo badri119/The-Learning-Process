@@ -16,17 +16,19 @@ const QuoteList = () => {
   }, [data]);
 
   const handleSearch = (e) => {
+    const searchTerm = e.target.value.toLowerCase(); // Convertng search term to lowercase
     setSearch(e.target.value);
     // console.log(search);
     const nameAndQuoteSearch = data.filter((quotesearch) => {
       return (
-        quotesearch.name.toLowerCase().includes(e.target.value) ||
-        quotesearch.quote.toLowerCase().includes(e.target.value)
+        quotesearch.name.toLowerCase().includes(searchTerm) || // Converting name to lowercase for comparison
+        quotesearch.quote.toLowerCase().includes(searchTerm) // Converting quote to lowercase for comparison
       );
     });
 
     setAllQuotes(nameAndQuoteSearch);
   };
+
   return (
     <div className="h-screen overflow-x-auto lg:w-screen bg-slate-400 flex flex-col items-center w-screen">
       <div className="flex justify-start gap-7 items-center px-5 py-3 absolute top-0 w-full bg-blue-600">
