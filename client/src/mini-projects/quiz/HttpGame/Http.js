@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./httpstyle.css";
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+import QuizHeader from "../components/QuizHeader";
 
 const Http = () => {
   const [httpData, setHttpData] = useState([]);
@@ -16,8 +17,9 @@ const Http = () => {
   const fetchData = async () => {
     try {
       const result = await fetch(process.env.REACT_APP_HTTP_API);
+      console.log(result); //direct response from API
       const data = await result.json();
-      // console.log(data);
+      console.log(data); //converting data to json
       setHttpData(data);
     } catch (err) {
       setError("Oh no, something went wrong!");
@@ -107,14 +109,7 @@ const Http = () => {
 
   return (
     <div className="h-screen bg-white flex items-center justify-center flex-col text-white">
-      <div className="flex justify-between items-center px-5 py-3 absolute top-0 w-full bg-black ">
-        <Link
-          to="/"
-          className="text-4xl text-white hover:bg-white hover:text-black hover:rounded-md"
-        >
-          <FaHome />
-        </Link>
-      </div>
+      <QuizHeader />
       {!quizStarted ? (
         <button
           className="bg-black hover:bg-white hover:text-black hover:border hover:border-black text-white font-bold py-2 px-4 rounded"

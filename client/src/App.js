@@ -1,13 +1,17 @@
 import "./App.css";
 import React from "react";
-import LandingPage from "./components/LandingPage";
-import QuoteProvider from "./components/context/ForQuotes/QuoteProvider";
-import Quote from "./components/quotes/Quote";
-import QuoteList from "./components/quotes/QuoteList";
-import Http from "./components/HttpGame/Http";
-import MovieDB from "./components/MovieDB/Main";
+import LandingPage from "./mini-projects/LandingPage";
+import QuoteProvider from "./mini-projects/context/ForQuotes/QuoteProvider";
+import Quote from "./mini-projects/quotes/Quote";
+import QuoteList from "./mini-projects/quotes/QuoteList";
+import Http from "./mini-projects/quiz/HttpGame/Http";
+import MovieDB from "./mini-projects/MovieDB/Main";
+import Management from "./mini-projects/project-management/management/Main";
+import Cart from "./mini-projects/cart/Main2";
+import ReactQuiz from "./mini-projects/quiz/React-quiz/Main3";
+import Quiz from "./mini-projects/quiz/QuizLanding";
 import { Provider } from "react-redux";
-import { store } from "./components/MovieDB/features/store";
+import { store } from "./mini-projects/MovieDB/features/store";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -35,7 +39,9 @@ function App() {
             </React.Fragment>
           }
         />
-        <Route path="/http-game" element={<Http />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/quiz/http-quiz" element={<Http />} />
+        <Route path="/quiz/react-quiz" element={<ReactQuiz />} />
         <Route
           path="/movie-db/*"
           element={
@@ -46,6 +52,9 @@ function App() {
             </React.Fragment>
           }
         />
+        <Route path="/management" element={<Management />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/quiz/http-game" element={<Http />} />
       </Routes>
     </div>
   );
