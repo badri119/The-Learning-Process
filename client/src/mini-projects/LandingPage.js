@@ -31,7 +31,7 @@ const LandingPage = () => {
       id: 3,
       header: "Quote Generator",
       img: quote,
-      info: "Generator your favorite quote or look at the entire list",
+      info: "Generate your favorite quote or look at the entire list",
       urlto: "/quote-generator",
       button: "Use API",
       tech: "Made with PostgreSQL, TailwindCSS and useContext",

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import httpquiz from "../../images/http.png";
 import Reactquiz from "../../images/React.png";
 import { FaHome } from "react-icons/fa";
-import { IoMdArrowRoundBack } from "react-icons/io";
 
 const LandingPage = () => {
   const quizzes = [
@@ -34,7 +33,7 @@ const LandingPage = () => {
             <FaHome />
           </Link>
         </div>
-        <div className=" flex flex-col gap-12 md:flex-row md:gap-12 justify-center px-4 md:px-0 items-center pt-12 h-screen">
+        <div className=" flex flex-col gap-12 md:flex-row md:gap-12 justify-center px-4 md:px-0 items-center pt-40 md:pt-12 h-screen">
           {quizzes.map(({ id, header, img, info, urlto }) => (
             <div className="max-w-96 bg-white border border-gray-200 rounded-lg shadow shadow-neutral-100 dark:bg-black dark:border-gray-700">
               <div key={id}>
