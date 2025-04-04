@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import httpquiz from "../../images/http.png";
 import Reactquiz from "../../images/React.png";
+import AWSQuiz from "../../images/AWS.png";
+import TerraformQuiz from "../../images/Terraform.png";
 import { FaHome } from "react-icons/fa";
 import ButtonQuiz from "./components/ButtonQuiz";
 
@@ -20,6 +22,20 @@ const LandingPage = () => {
       img: Reactquiz,
       info: "Take the React Quiz",
       urlto: "/quiz/react-quiz",
+    },
+    {
+      id: 3,
+      header: "AWS Quiz",
+      img: AWSQuiz,
+      info: "Test your AWS knowledge",
+      urlto: "/quiz/aws-quiz",
+    },
+    {
+      id: 4,
+      header: "Terraform Quiz",
+      img: TerraformQuiz,
+      info: "Test your Terraform skills",
+      urlto: "/quiz/terraform-quiz",
     },
   ];
 

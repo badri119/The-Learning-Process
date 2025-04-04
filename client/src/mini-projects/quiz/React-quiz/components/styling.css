@@ -245,3 +245,23 @@
     transform: translateY(0);
   }
 }
+
+/* React quiz specific styling */
+
+.react-quiz-h2 {
+  background: linear-gradient(
+    90deg,
+    rgba(97, 218, 251, 1),
+    rgba(35, 85, 110, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white;
+}
+
+#react-question {
+  background: linear-gradient(180deg, #61dafb, #23556e);
+}
+
+#react-summary {
+  background: linear-gradient(180deg, #61dafb, #23556e);
+}

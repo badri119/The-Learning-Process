@@ -9,6 +9,8 @@ import MovieDB from "./mini-projects/MovieDB/Main";
 import Management from "./mini-projects/project-management/management/Main";
 import Cart from "./mini-projects/cart/Main2";
 import ReactQuiz from "./mini-projects/quiz/React-quiz/Main3";
+import AWSQuiz from "./mini-projects/quiz/AWS-quiz/Main4";
+import TerraformQuiz from "./mini-projects/quiz/Terraform-quiz/Main5";
 import Quiz from "./mini-projects/quiz/QuizLanding";
 import { Provider } from "react-redux";
 import { store } from "./mini-projects/MovieDB/features/store";
@@ -42,6 +44,8 @@ function App() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/quiz/http-quiz" element={<Http />} />
         <Route path="/quiz/react-quiz" element={<ReactQuiz />} />
+        <Route path="/quiz/aws-quiz" element={<AWSQuiz />} />
+        <Route path="/quiz/terraform-quiz" element={<TerraformQuiz />} />
         <Route
           path="/movie-db/*"
           element={

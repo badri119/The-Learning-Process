@@ -5,7 +5,7 @@ import { Questions } from "./components/Questions";
 import "./components/styling.css";
 import "../shared-components/styling.css";
 
-const Main3 = () => {
+const Main5 = () => {
   return (
     <div
       className="quiz-container"
@@ -13,10 +13,10 @@ const Main3 = () => {
     >
       <QuizHeader />
       <main>
-        <Quiz questions={Questions} cssPrefix="react-" />
+        <Quiz questions={Questions} questionCount={8} cssPrefix="terraform-" />
       </main>
     </div>
   );
 };
 
-export default Main3;
+export default Main5;
